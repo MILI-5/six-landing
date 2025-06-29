@@ -7,7 +7,7 @@ This project demonstrates premium UI/UX, smooth animations, and a clean, maintai
 
 ## 🚀 Live Demo
 
-[View the deployed site on Vercel](https://six-landing-h3ci.vercel.app/)
+[View the deployed site on Vercel](https://six-landing.vercel.app/)
 
 ---
 
