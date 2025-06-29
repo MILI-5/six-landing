@@ -4,42 +4,42 @@ const products = [
   {
     id: 1,
     name: 'Glow Serum',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&h=200&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&h=400&fit=crop&crop=center',
     price: '$29',
     description: 'Brightening vitamin C serum'
   },
   {
     id: 2,
     name: 'Hydra Cream',
-    image: 'https://images.unsplash.com/photo-1570194065650-1e32a5b5e57c?w=200&h=200&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=400&fit=crop&crop=center',
     price: '$35',
     description: '24-hour hydration moisturizer'
   },
   {
     id: 3,
     name: 'Pure Cleanser',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&h=200&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?w=400&h=400&fit=crop&crop=center',
     price: '$22',
     description: 'Gentle daily cleanser'
   },
   {
     id: 4,
     name: 'Radiance Mask',
-    image: 'https://images.unsplash.com/photo-1570194065650-1e32a5b5e57c?w=200&h=200&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=400&fit=crop&crop=center',
     price: '$31',
     description: 'Weekly brightening treatment'
   },
   {
     id: 5,
     name: 'Eye Cream',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&h=200&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=center',
     price: '$28',
     description: 'Anti-aging eye treatment'
   },
   {
     id: 6,
     name: 'Sunscreen SPF 50',
-    image: 'https://images.unsplash.com/photo-1570194065650-1e32a5b5e57c?w=200&h=200&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=400&fit=crop&crop=center',
     price: '$25',
     description: 'Broad spectrum protection'
   }
