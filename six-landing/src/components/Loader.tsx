@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 
 const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
   const loaderRef = useRef<HTMLDivElement>(null);
@@ -8,12 +7,9 @@ const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
     // Simulate loading, then fade out
     const timer = setTimeout(() => {
       if (loaderRef.current) {
-        gsap.to(loaderRef.current, {
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.out',
-          onComplete: onFinish,
-        });
+        loaderRef.current.style.opacity = '0';
+        loaderRef.current.style.transition = 'opacity 1s ease-out';
+        setTimeout(onFinish, 1000);
       }
     }, 1200); // 1.2s loader
     return () => clearTimeout(timer);

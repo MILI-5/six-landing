@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 
 interface AnimatedTextProps {
   text: string;
@@ -12,17 +11,17 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text }) => {
     const words = containerRef.current?.querySelectorAll('.animated-word');
     if (!words) return;
 
-    // Simple animation without ScrollTrigger
-    gsap.set(words, { opacity: 0, color: '#a3a3a3' });
-    
-    const tl = gsap.timeline();
-    tl.to(words, {
-      opacity: 1,
-      color: '#111827',
-      stagger: 0.08,
-      duration: 0.7,
-      ease: 'power2.out',
-      delay: 0.5, // Delay after component mounts
+    // Simple CSS-based animation
+    words.forEach((word, index) => {
+      const element = word as HTMLElement;
+      element.style.opacity = '0';
+      element.style.color = '#a3a3a3';
+      element.style.transition = 'opacity 0.7s ease-out, color 0.7s ease-out';
+      
+      setTimeout(() => {
+        element.style.opacity = '1';
+        element.style.color = '#111827';
+      }, 500 + (index * 80)); // Stagger the animation
     });
   }, []);
 

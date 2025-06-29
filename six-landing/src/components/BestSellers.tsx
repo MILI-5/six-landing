@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import gsap from 'gsap';
 
 const products = [
   {
@@ -38,7 +37,7 @@ const BestSellers: React.FC = () => {
     const current = slider.scrollLeft;
     const target = dir === 'left' ? current - slideAmount : current + slideAmount;
     
-    // Use native smooth scrolling instead of GSAP scrollTo
+    // Use native smooth scrolling
     slider.scrollTo({
       left: target,
       behavior: 'smooth'
@@ -68,17 +67,8 @@ const BestSellers: React.FC = () => {
               <div className="font-semibold text-lg mb-1 text-gray-800">{product.name}</div>
               <div className="text-green-700 font-bold mb-2">{product.price}</div>
               <button
-                className="mt-auto px-4 py-2 rounded-full bg-green-700 text-white font-medium shadow transition-transform duration-200 active:scale-95 focus:outline-none"
+                className="mt-auto px-4 py-2 rounded-full bg-green-700 text-white font-medium shadow transition-all duration-200 active:scale-95 focus:outline-none hover:bg-green-600"
                 onClick={() => alert(`Added ${product.name} to cart!`)}
-                onMouseDown={e => {
-                  gsap.to(e.currentTarget, { scale: 0.93, duration: 0.15 });
-                }}
-                onMouseUp={e => {
-                  gsap.to(e.currentTarget, { scale: 1, duration: 0.2, ease: 'elastic.out(1, 0.5)' });
-                }}
-                onMouseLeave={e => {
-                  gsap.to(e.currentTarget, { scale: 1, duration: 0.2 });
-                }}
               >
                 Add to Cart
               </button>
@@ -87,14 +77,14 @@ const BestSellers: React.FC = () => {
         </div>
         {/* Slide Buttons (show on mobile/tablet only) */}
         <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 shadow-md rounded-full w-10 h-10 flex items-center justify-center md:hidden z-10 hover:bg-green-50 active:scale-90 transition"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 shadow-md rounded-full w-10 h-10 flex items-center justify-center md:hidden z-10 hover:bg-green-50 active:scale-90 transition-all duration-200"
           onClick={() => slide('left')}
           aria-label="Scroll left"
         >
           <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="#222" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
         <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 shadow-md rounded-full w-10 h-10 flex items-center justify-center md:hidden z-10 hover:bg-green-50 active:scale-90 transition"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 shadow-md rounded-full w-10 h-10 flex items-center justify-center md:hidden z-10 hover:bg-green-50 active:scale-90 transition-all duration-200"
           onClick={() => slide('right')}
           aria-label="Scroll right"
         >

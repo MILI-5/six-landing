@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import AnimatedText from './AnimatedText';
 
 const LandingHero: React.FC = () => {
@@ -7,11 +6,16 @@ const LandingHero: React.FC = () => {
 
   useEffect(() => {
     if (heroRef.current) {
-      gsap.fromTo(
-        heroRef.current,
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }
-      );
+      heroRef.current.style.opacity = '0';
+      heroRef.current.style.transform = 'translateY(40px)';
+      heroRef.current.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
+      
+      setTimeout(() => {
+        if (heroRef.current) {
+          heroRef.current.style.opacity = '1';
+          heroRef.current.style.transform = 'translateY(0)';
+        }
+      }, 100);
     }
   }, []);
 

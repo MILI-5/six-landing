@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import gsap from 'gsap';
 
 const faqs = [
   {
@@ -28,30 +27,6 @@ const FAQ: React.FC = () => {
     setOpenIndex((prev) => (prev === idx ? null : idx));
   };
 
-  React.useEffect(() => {
-    faqs.forEach((_, idx) => {
-      const el = answerRefs.current[idx];
-      if (!el) return;
-      if (openIndex === idx) {
-        gsap.to(el, {
-          height: el.scrollHeight,
-          opacity: 1,
-          duration: 0.5,
-          ease: 'power2.inOut',
-          pointerEvents: 'auto',
-        });
-      } else {
-        gsap.to(el, {
-          height: 0,
-          opacity: 0,
-          duration: 0.4,
-          ease: 'power2.inOut',
-          pointerEvents: 'none',
-        });
-      }
-    });
-  }, [openIndex]);
-
   return (
     <section className="w-full max-w-2xl mx-auto py-12 px-4 md:px-0">
       <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900 text-center">Frequently Asked Questions</h2>
@@ -59,7 +34,7 @@ const FAQ: React.FC = () => {
         {faqs.map((faq, idx) => (
           <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden bg-white">
             <button
-              className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-medium text-gray-800 focus:outline-none hover:bg-green-50 transition"
+              className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-medium text-gray-800 focus:outline-none hover:bg-green-50 transition-colors duration-200"
               onClick={() => toggleFAQ(idx)}
               aria-expanded={openIndex === idx}
             >
@@ -75,11 +50,18 @@ const FAQ: React.FC = () => {
               </svg>
             </button>
             <div
-              ref={el => (answerRefs.current[idx] = el)}
-              className="px-6 overflow-hidden"
-              style={{ height: 0, opacity: 0, pointerEvents: 'none' }}
+              ref={(el) => {
+                answerRefs.current[idx] = el;
+              }}
+              className="px-6 overflow-hidden transition-all duration-500 ease-in-out"
+              style={{ 
+                maxHeight: openIndex === idx ? '200px' : '0px',
+                opacity: openIndex === idx ? 1 : 0,
+                paddingTop: openIndex === idx ? '16px' : '0px',
+                paddingBottom: openIndex === idx ? '16px' : '0px'
+              }}
             >
-              <div className="py-4 text-gray-600 text-base">
+              <div className="text-gray-600 text-base">
                 {faq.answer}
               </div>
             </div>
