@@ -1,3 +1,42 @@
+# Six Landing Page
+
+A modern, responsive skincare landing page built with Next.js and Tailwind CSS.
+
+## Screenshots
+
+### Hero Section
+![Hero Section](screenshots/hero.jpg)
+
+### Best Selling Products
+![Best Sellers](screenshots/best-sellers.jpg)
+
+### FAQ Section
+![FAQ Section](screenshots/faq.jpg)
+
+## Features
+- Responsive design for mobile, tablet, and desktop
+- Animated loader and hero section
+- Animated text reveal
+- Interactive product slider with real skincare product images
+- FAQ section with smooth expand/collapse
+
+## Tech Stack
+- Next.js
+- Tailwind CSS
+- React
+
+## Getting Started
+1. Clone the repo
+2. Install dependencies: `npm install`
+3. Run locally: `npm run dev`
+
+## Live Demo
+[View on Vercel](https://six-landing-h3ci.vercel.app/)
+
+---
+
+> **Note:** The screenshots above are located in the `screenshots/` directory of this repository.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
