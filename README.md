@@ -1,8 +1,17 @@
 # Six Landing Page
 
-A modern, responsive skincare landing page built with Next.js and Tailwind CSS.
+A modern, fully responsive skincare landing page built with **Next.js**, **React**, and **Tailwind CSS**.  
+This project demonstrates premium UI/UX, smooth animations, and a clean, maintainable codebase for a real-world product landing page.
 
-## Screenshots
+---
+
+## 🚀 Live Demo
+
+[View the deployed site on Vercel](https://six-landing-h3ci.vercel.app/)
+
+---
+
+## 📸 Screenshots
 
 ### Hero Section
 ![Hero Section](screenshots/hero.jpg)
@@ -13,63 +22,134 @@ A modern, responsive skincare landing page built with Next.js and Tailwind CSS.
 ### FAQ Section
 ![FAQ Section](screenshots/faq.jpg)
 
-## Features
-- Responsive design for mobile, tablet, and desktop
-- Animated loader and hero section
-- Animated text reveal
-- Interactive product slider with real skincare product images
-- FAQ section with smooth expand/collapse
+---
 
-## Tech Stack
-- Next.js
-- Tailwind CSS
-- React
+## ✨ Features
 
-## Getting Started
-1. Clone the repo
-2. Install dependencies: `npm install`
-3. Run locally: `npm run dev`
-
-## Live Demo
-[View on Vercel](https://six-landing-h3ci.vercel.app/)
+- **Fully Responsive:** Looks great on mobile, tablet, and desktop.
+- **Animated Loader:** Elegant page load animation for a premium feel.
+- **Hero Section:** Eye-catching headline, animated text, and call-to-action buttons.
+- **Animated Text Reveal:** The first paragraph animates word-by-word on load.
+- **Best Sellers Slider:** Interactive, tactile product slider with real skincare product images and animated buttons.
+- **FAQ Section:** Expand/collapse with smooth, accessible animations.
+- **Modern UI:** Uses Tailwind CSS for rapid, maintainable styling.
+- **Clean Codebase:** Modular React components, TypeScript, and best practices.
 
 ---
 
-> **Note:** The screenshots above are located in the `screenshots/` directory of this repository.
+## 🗂️ Project Structure
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```
+six-landing/
+│
+├── public/                # Static assets (SVGs, favicon, etc.)
+├── screenshots/           # Screenshots for documentation
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx     # Root layout and global styles
+│   │   ├── page.tsx       # Main landing page
+│   │   ├── globals.css    # Tailwind and custom global styles
+│   │   └── favicon.ico
+│   └── components/
+│       ├── Loader.tsx         # Animated loader
+│       ├── LandingHero.tsx    # Hero section with animated text
+│       ├── AnimatedText.tsx   # Word-by-word text animation
+│       ├── BestSellers.tsx    # Product slider
+│       └── FAQ.tsx            # FAQ section
+├── package.json
+├── tsconfig.json
+├── postcss.config.mjs
+├── eslint.config.mjs
+├── README.md
+└── ... (other config files)
+```
 
-## Getting Started
+---
 
-First, run the development server:
+## 🛠️ Tech Stack
 
+- [Next.js](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [GSAP](https://gsap.com/) (for advanced animation, if enabled)
+- [ESLint](https://eslint.org/) (code quality)
+- [PostCSS](https://postcss.org/) (with Tailwind plugin)
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/MILI-5/six-landing.git
+cd six-landing
+```
+
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+---
+
+## 🏗️ Build & Deploy
+
+### Build for production
+```bash
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Start production server
+```bash
+npm start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Deploy on Vercel
+- Import your repo at [vercel.com/import](https://vercel.com/import)
+- Set the root directory to `/` (project root)
+- Vercel auto-detects Next.js and deploys your site
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📝 Customization
 
-To learn more about Next.js, take a look at the following resources:
+- **Add/replace product images:** Edit the `products` array in `src/components/BestSellers.tsx`.
+- **Edit FAQ:** Update the `faqs` array in `src/components/FAQ.tsx`.
+- **Change hero text:** Edit `src/components/LandingHero.tsx`.
+- **Global styles:** Edit `src/app/globals.css` and Tailwind config.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Scripts
 
-## Deploy on Vercel
+- `npm run dev` – Start development server
+- `npm run build` – Build for production
+- `npm start` – Start production server
+- `npm run lint` – Run ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+If you need further customization or want to add more documentation, let me know!
