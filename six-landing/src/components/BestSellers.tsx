@@ -5,25 +5,25 @@ const products = [
   {
     id: 1,
     name: 'Glow Serum',
-    image: '/public/globe.svg',
+    image: '/globe.svg',
     price: '$29',
   },
   {
     id: 2,
     name: 'Hydra Cream',
-    image: '/public/window.svg',
+    image: '/window.svg',
     price: '$35',
   },
   {
     id: 3,
     name: 'Pure Cleanser',
-    image: '/public/vercel.svg',
+    image: '/vercel.svg',
     price: '$22',
   },
   {
     id: 4,
     name: 'Radiance Mask',
-    image: '/public/file.svg',
+    image: '/file.svg',
     price: '$31',
   },
 ];
@@ -37,10 +37,11 @@ const BestSellers: React.FC = () => {
     const slideAmount = slider.offsetWidth * 0.7; // Slide by 70% of container
     const current = slider.scrollLeft;
     const target = dir === 'left' ? current - slideAmount : current + slideAmount;
-    gsap.to(slider, {
-      scrollTo: { x: target },
-      duration: 0.7,
-      ease: 'power2.out',
+    
+    // Use native smooth scrolling instead of GSAP scrollTo
+    slider.scrollTo({
+      left: target,
+      behavior: 'smooth'
     });
   };
 

@@ -12,22 +12,18 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text }) => {
     const words = containerRef.current?.querySelectorAll('.animated-word');
     if (!words) return;
 
-    const ctx = gsap.context(() => {
-      gsap.set(words, { opacity: 0, color: '#a3a3a3' });
-      gsap.to(words, {
-        opacity: 1,
-        color: '#111827',
-        stagger: 0.08,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      });
-    }, containerRef);
-    return () => ctx.revert();
+    // Simple animation without ScrollTrigger
+    gsap.set(words, { opacity: 0, color: '#a3a3a3' });
+    
+    const tl = gsap.timeline();
+    tl.to(words, {
+      opacity: 1,
+      color: '#111827',
+      stagger: 0.08,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: 0.5, // Delay after component mounts
+    });
   }, []);
 
   return (
